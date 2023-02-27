@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		F62CBD9F29AA4443008BA22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBD9E29AA4443008BA22A /* AppDelegate.swift */; };
 		F62CBDA129AA4443008BA22A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDA029AA4443008BA22A /* SceneDelegate.swift */; };
-		F62CBDA329AA4443008BA22A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDA229AA4443008BA22A /* ViewController.swift */; };
-		F62CBDA629AA4443008BA22A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62CBDA429AA4443008BA22A /* Main.storyboard */; };
+		F62CBDA329AA4443008BA22A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDA229AA4443008BA22A /* MainTabBarViewController.swift */; };
 		F62CBDA829AA4446008BA22A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62CBDA729AA4446008BA22A /* Assets.xcassets */; };
 		F62CBDAB29AA4446008BA22A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62CBDA929AA4446008BA22A /* LaunchScreen.storyboard */; };
+		F62CBDB429AB82C8008BA22A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDB329AB82C8008BA22A /* HomeViewController.swift */; };
+		F62CBDB629AB8319008BA22A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDB529AB8319008BA22A /* UpcomingViewController.swift */; };
+		F62CBDB829AB8429008BA22A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDB729AB8429008BA22A /* SearchViewController.swift */; };
+		F62CBDBA29AB8510008BA22A /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDB929AB8510008BA22A /* DownloadsViewController.swift */; };
+		F62CBDCA29ABAC54008BA22A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CBDC929ABAC54008BA22A /* CollectionViewTableViewCell.swift */; };
+		F6E8A6B329AD081400A16673 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8A6B229AD081400A16673 /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F62CBD9B29AA4443008BA22A /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62CBD9E29AA4443008BA22A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62CBDA029AA4443008BA22A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F62CBDA229AA4443008BA22A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F62CBDA529AA4443008BA22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F62CBDA229AA4443008BA22A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F62CBDA729AA4446008BA22A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F62CBDAA29AA4446008BA22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F62CBDAC29AA4446008BA22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F62CBDB329AB82C8008BA22A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F62CBDB529AB8319008BA22A /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		F62CBDB729AB8429008BA22A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F62CBDB929AB8510008BA22A /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		F62CBDC929ABAC54008BA22A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		F6E8A6B229AD081400A16673 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		F62CBD9D29AA4443008BA22A /* Netflix Clone */ = {
 			isa = PBXGroup;
 			children = (
+				F62CBDC629ABAB4A008BA22A /* Managers */,
+				F62CBDC529ABAB3B008BA22A /* Resources */,
+				F62CBDC429ABAB10008BA22A /* Models */,
+				F62CBDC229ABAAF4008BA22A /* Views */,
+				F62CBDC329ABAB04008BA22A /* ViewsModels */,
+				F62CBDB229AB824D008BA22A /* Controllers */,
+				F62CBDA229AA4443008BA22A /* MainTabBarViewController.swift */,
 				F62CBD9E29AA4443008BA22A /* AppDelegate.swift */,
 				F62CBDA029AA4443008BA22A /* SceneDelegate.swift */,
-				F62CBDA229AA4443008BA22A /* ViewController.swift */,
-				F62CBDA429AA4443008BA22A /* Main.storyboard */,
 				F62CBDA729AA4446008BA22A /* Assets.xcassets */,
 				F62CBDA929AA4446008BA22A /* LaunchScreen.storyboard */,
 				F62CBDAC29AA4446008BA22A /* Info.plist */,
 			);
 			path = "Netflix Clone";
+			sourceTree = "<group>";
+		};
+		F62CBDB229AB824D008BA22A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F62CBDB329AB82C8008BA22A /* HomeViewController.swift */,
+				F62CBDB529AB8319008BA22A /* UpcomingViewController.swift */,
+				F62CBDB729AB8429008BA22A /* SearchViewController.swift */,
+				F62CBDB929AB8510008BA22A /* DownloadsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F62CBDC229ABAAF4008BA22A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F62CBDC929ABAC54008BA22A /* CollectionViewTableViewCell.swift */,
+				F6E8A6B229AD081400A16673 /* HeroHeaderUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F62CBDC329ABAB04008BA22A /* ViewsModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewsModels;
+			sourceTree = "<group>";
+		};
+		F62CBDC429ABAB10008BA22A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F62CBDC529ABAB3B008BA22A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F62CBDC629ABAB4A008BA22A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +190,6 @@
 			files = (
 				F62CBDAB29AA4446008BA22A /* LaunchScreen.storyboard in Resources */,
 				F62CBDA829AA4446008BA22A /* Assets.xcassets in Resources */,
-				F62CBDA629AA4443008BA22A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +200,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F62CBDA329AA4443008BA22A /* ViewController.swift in Sources */,
+				F62CBDB829AB8429008BA22A /* SearchViewController.swift in Sources */,
+				F62CBDA329AA4443008BA22A /* MainTabBarViewController.swift in Sources */,
+				F62CBDCA29ABAC54008BA22A /* CollectionViewTableViewCell.swift in Sources */,
+				F6E8A6B329AD081400A16673 /* HeroHeaderUIView.swift in Sources */,
+				F62CBDBA29AB8510008BA22A /* DownloadsViewController.swift in Sources */,
 				F62CBD9F29AA4443008BA22A /* AppDelegate.swift in Sources */,
 				F62CBDA129AA4443008BA22A /* SceneDelegate.swift in Sources */,
+				F62CBDB629AB8319008BA22A /* UpcomingViewController.swift in Sources */,
+				F62CBDB429AB82C8008BA22A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F62CBDA429AA4443008BA22A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F62CBDA529AA4443008BA22A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F62CBDA929AA4446008BA22A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +352,6 @@
 				INFOPLIST_FILE = "Netflix Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +379,6 @@
 				INFOPLIST_FILE = "Netflix Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
