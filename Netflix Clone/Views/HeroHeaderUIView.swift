@@ -10,7 +10,6 @@ import UIKit
 class HeroHeaderUIView: UIView {
     
     private let downloadButton: UIButton = {
-        
         let button = UIButton()
         button.setTitle("Download", for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
@@ -18,8 +17,6 @@ class HeroHeaderUIView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         return button
-        
-        
         
     }()
 

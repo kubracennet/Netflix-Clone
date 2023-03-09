@@ -11,6 +11,7 @@ import WebKit
 class TitlePreviewViewController: UIViewController {
     
     private let titleLabel: UILabel = {
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
@@ -21,6 +22,7 @@ class TitlePreviewViewController: UIViewController {
     
     
     private let overviewLabel: UILabel = {
+        
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -98,11 +100,11 @@ class TitlePreviewViewController: UIViewController {
         NSLayoutConstraint.activate(downloadButtonConstraints)
     }
     
-    func configure(with model: TitlePreviewViewModel) {
+    public func configure(with model: TitlePreviewViewModel) {
         titleLabel.text = model.title
         overviewLabel.text = model.titleOverview
         
-        guard let url = URL(string: "hhtps://wwww.youtube.com/embed/\(model.youtubeView.id.videoId)") else {
+        guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else {
             return
         }
         

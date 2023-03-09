@@ -9,7 +9,6 @@ import UIKit
 
 
 protocol SearchResultsViewControllerDelegate: AnyObject {
-    
     func SearchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel)
 }
 

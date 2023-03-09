@@ -73,7 +73,7 @@ class TitleTableViewCell: UITableViewCell {
                 return
         }
         
-        titlesPosterUIImageView.sd_setImage(with: url, placeholderImage: nil)
+        titlesPosterUIImageView.sd_setImage(with: url, completed: nil)
         titleLabel.text = model.titleName
         
     }
