@@ -15,10 +15,10 @@ enum Sections: Int {
     case TopRated = 4
 }
 
-
-
-
 class HomeViewController: UIViewController {
+    
+    private var randomTrendingMovie: Title?
+    private var headerView: HeroHeaderUIView?
     
     let sectionTitles: [String] = ["Trending Movies","Trending", "Popular", "Upcoming Movies", "Top Rated"]
     
@@ -32,17 +32,33 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedTable)
-        
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         
         configureNavbar()
         
-        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+        configureHeroHeaderView()
         
-        //fetchData()
+    
+    }
+    
+    private func configureHeroHeaderView() {
         
+        APICaller.shared.getTrendingMovies { [weak self] result in
+            switch result {
+            case .success(let titles):
+                let selectedTitle = titles.randomElement()
+                
+                self?.randomTrendingMovie = selectedTitle
+                self?.headerView?.configure(with: TitleViewModel(titleName: selectedTitle?.original_title ?? "", posterURL: selectedTitle?.poster_path ?? ""))
+                
+            case.failure(let error):
+                print(error.localizedDescription)
+                    
+                }
+            }
     }
     
     private func configureNavbar() {
@@ -55,7 +71,7 @@ class HomeViewController: UIViewController {
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
         ]
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .white
         
         
     }
@@ -77,21 +93,7 @@ class HomeViewController: UIViewController {
             
         //}
         
-      //  APICaller.shared.getTrendingTvs { results in
-            
-        //}
-        
-     //   APICaller.shared.getUpComingMovies { _ in
-             
-      //  }
-        
-        // APICaller.shared.getPopular { _ in
-            
-        //}
-      //  APICaller.shared.getTopRated { _ in
-             
-       // }
-  //  }
+      
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -110,17 +112,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.delegate = self
         
       switch indexPath.section {
-            
       case Sections.TrendingMovies.rawValue:
-          
             APICaller.shared.getTrendingMovies { result in
                 switch result {
+                    
                 case .success(let titles):
-               cell.configure(with: titles)
+                   cell.configure(with: titles)
                case .failure(let error):
-              print(error.localizedDescription)
+                   print(error.localizedDescription)
            }
         }
                                                
@@ -134,8 +136,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
             }
         }
+          
+      case Sections.TrendingTv.rawValue:
+          APICaller.shared.getTrendingTvs { result in
+              switch result {
+              case .success(let titles):
+                  cell.configure(with: titles)
+              case.failure(let error):
+                  print(error.localizedDescription)
+              }
+          }
        
-                                                
            case Sections.Popular.rawValue:
             APICaller.shared.getPopular { result in
               switch result {
@@ -188,7 +199,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let header = view as? UITableViewHeaderFooterView else {return}
         header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
-        header.textLabel?.textColor = .black
+        header.textLabel?.textColor = .white
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter() // bu kodla yazı boyutlarımı küçültmüş oldum baş harf dahil küçültme oldu
     }
     
@@ -206,6 +217,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
 
 
 
