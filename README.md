@@ -1,6 +1,6 @@
 # Netflix-Clone
 
-I’m happy that I have built NetflixClone in iOS using Swift UiKit.
+I have built NetflixClone in iOS using Swift UiKit.
 NetflixClone is an iOS application to explore popular, trending, upcoming, top-rated Movies and TV shows and watch their trailers.
 
 I developed this app in MVVM architecture pattern.
