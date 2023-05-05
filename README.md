@@ -1,4 +1,4 @@
-# Netflix-Clone
+Netflix-SwiftUIKit Clone
 
 I have built NetflixClone in iOS using Swift UiKit.
 NetflixClone is an iOS application to explore popular, trending, upcoming, top-rated Movies and TV shows and watch their trailers.
